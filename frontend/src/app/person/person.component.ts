@@ -1,6 +1,7 @@
 import { NgModule, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http, Headers } from '@angular/http';
+import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
 import {
     ReactiveFormsModule,
     FormsModule,
@@ -30,7 +31,13 @@ export class PersonComponent implements OnInit {
         private headerService: HeaderService,
         private http: Http,
     ) {
+        // get initial users
         http.get('http://localhost:3000/users').subscribe(res => this.users = res.json());
+
+        // check every second for updates
+        IntervalObservable.create(3000).subscribe(() => {
+            http.get('http://localhost:3000/users').subscribe(res => this.users = res.json());
+        })
     }
 
     ngOnInit() {
