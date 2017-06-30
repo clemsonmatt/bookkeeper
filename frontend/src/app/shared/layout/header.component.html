@@ -1,0 +1,72 @@
+<div class="sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <div class="clearfix text-center">
+            <a href="#" class="navbar-brand">
+                bookkeeper
+            </a>
+        </div>
+
+        <div class="sidebar-search">
+            <input type="text" name="search" placeholder="Search...">
+        </div>
+
+        <ul id="side-menu" class="nav">
+            <li>
+                <a href="#">
+                    <fa [name]="'dashboard'"></fa>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a routerLink="/person">
+                    <fa [name]="'users'"></fa>
+                    Customers
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <fa [name]="'building'"></fa>
+                    Vendors
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <fa [name]="'address-book'"></fa>
+                    Employees
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <fa [name]="'exchange'"></fa>
+                    Transactions
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <fa [name]="'line-chart'"></fa>
+                    Reports
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <fa [name]="'cubes'"></fa>
+                    Inventory
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="header">
+    <div class="profile dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <fa [name]="'user-circle'"></fa>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li>
+                <a href="#">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <span [innerText]="header"></span>
+</div>
